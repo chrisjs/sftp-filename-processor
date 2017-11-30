@@ -13,6 +13,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties
 public class SftpFilenameProcessorProperties {
 	private static final Integer DEFAULT_SFTP_PORT = 22;
+	private static final String DEFAULT_LOCAL_FILE_PATH_JOB_PARAM_NAME = "localFilePath";
+	private static final String DEFAULT_REMOTE_FILE_PATH_JOB_PARAM_NAME = "remoteFilePath";
 
 	/**
 	 * The URI of the artifact to be applied to the TaskLaunchRequest.
@@ -38,12 +40,12 @@ public class SftpFilenameProcessorProperties {
 	/**
 	 * Value to use as the remote file job parameter name.
 	 */
-	private String remoteFilePathJobParameterName;
+	private String remoteFilePathJobParameterName = DEFAULT_REMOTE_FILE_PATH_JOB_PARAM_NAME;
 
 	/**
 	 * Value to use as the local file job parameter name.
 	 */
-	private String localFilePathJobParameterName;
+	private String localFilePathJobParameterName = DEFAULT_LOCAL_FILE_PATH_JOB_PARAM_NAME;
 
 	/**
 	 * The file path to use as the local file job paramter value.
@@ -105,7 +107,6 @@ public class SftpFilenameProcessorProperties {
 		this.deploymentProperties = deploymentProperties;
 	}
 
-	@NotBlank
 	public String getRemoteFilePathJobParameterName() {
 		return remoteFilePathJobParameterName;
 	}
@@ -114,7 +115,6 @@ public class SftpFilenameProcessorProperties {
 		this.remoteFilePathJobParameterName = remoteFilePathJobParameterName;
 	}
 
-	@NotBlank
 	public String getLocalFilePathJobParameterName() {
 		return localFilePathJobParameterName;
 	}
