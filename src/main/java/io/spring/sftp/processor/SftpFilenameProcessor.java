@@ -61,9 +61,7 @@ public class SftpFilenameProcessor {
 		properties.put(SFTP_HOST_PROPERTY_KEY, processorProperties.getSftpHost());
 		properties.put(SFTP_USERNAME_PROPERTY_KEY, processorProperties.getSftpUsername());
 		properties.put(SFTP_PASSWORD_PROPERTY_KEY, processorProperties.getSftpPassword());
-
-		Integer sftpPort = processorProperties.getSftpPort();
-		properties.put(SFTP_PORT_PROPERTY_KEY, sftpPort != null ? sftpPort.toString() : null);
+		properties.put(SFTP_PORT_PROPERTY_KEY, processorProperties.getSftpPort().toString());
 
 		return properties;
 	}

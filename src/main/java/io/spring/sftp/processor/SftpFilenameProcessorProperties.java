@@ -12,6 +12,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  */
 @ConfigurationProperties
 public class SftpFilenameProcessorProperties {
+	private static final Integer DEFAULT_SFTP_PORT = 22;
+
 	/**
 	 * The URI of the artifact to be applied to the TaskLaunchRequest.
 	 */
@@ -54,9 +56,9 @@ public class SftpFilenameProcessorProperties {
 	private String sftpHost;
 
 	/**
-	 * The (option) SFTP host port.
+	 * The (optional) SFTP host port, defaults to 22.
 	 */
-	private Integer sftpPort;
+	private Integer sftpPort = DEFAULT_SFTP_PORT;
 
 	/**
 	 * The SFTP username.
